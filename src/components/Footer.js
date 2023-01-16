@@ -46,8 +46,8 @@ const Footer = () => {
   const [value, setValue] = React.useState(dayjs("2022-04-07"));
 
   return (
-    <Box className=" h-44 bg-cyan-400 relative ">
-      <Box className=" bg-white py-0 flex justify-center items-center gap-2 w-3/4 rounded-lg absolute top-10 left-36">
+    <Box className=" h-44 bg-cyan-400 relative rounded-md ">
+      <Box className=" bg-white py-0 flex justify-center items-center gap-2 w-3/4 rounded-xl absolute top-10 left-36">
         <RadioGroup
           row
           aria-labelledby="demo-row-radio-buttons-group-label"
@@ -188,9 +188,9 @@ const Footer = () => {
       <Stack
         direction="row"
         spacing={15}
-        className="bg-white  absolute top-20 left-24 w-5/6 rounded-lg"
+        className="bg-white  absolute top-20 left-24 w-5/6 rounded-xl p-0"
       >
-        <Stack direction="row" spacing={4} className=" items-center gap-5">
+        <Stack direction="row" spacing={4} className=" items-center gap-5 ">
           <MdFlightTakeoff className=" text-[50px]" />
           {"From "}
         </Stack>
@@ -201,7 +201,7 @@ const Footer = () => {
           {"To "}
         </Stack>
 
-        <Stack direction="row" spacing={19}>
+        <Stack direction="row" spacing={18} className=" relative">
           <Divider orientation="vertical" variant="middle" flexItem />
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DatePicker
@@ -221,15 +221,18 @@ const Footer = () => {
           <Button
             size="small"
             variant="text"
+            className=" h-8 w-24 absolute top-2 right-7"
             sx={{
               backgroundColor: "orange",
               "&:hover": {
                 backgroundColor: "orange",
               },
-              margin: "4em",
+              borderRadius: "10px",
             }}
           >
-            Search
+            <Typography variant="body1" className="normal-case text-white">
+              Search
+            </Typography>
           </Button>
         </Stack>
       </Stack>
